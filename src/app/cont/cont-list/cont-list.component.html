@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Conturi</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary" (click)="redirectContNouPage()">Cont nou</button>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <section class="main">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Cod</th>
+              <th>Denumire</th>
+              <th>Valoare</th>
+              <th>Tip cont</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cont of conturi">
+              <th scope="row">{{cont.cod}}</th>
+              <td>{{cont.denumire}}</td>
+              <td>{{cont.valoare}}</td>
+              <td>{{cont.tipCont}}</td>
+              <td>
+                <button type="button" class="btn btn-success" (click)="editContPage(cont)">Editare</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </div>
+</div>

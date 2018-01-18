@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <form novalidate [formGroup]="contForm" (ngSubmit)="onSubmit()">
+          <fieldset>
+            <div class="form-group">
+              <label>Cod</label>
+              <input type="text" class="form-control" formControlName="cod">
+            </div>
+            <div class="form-group">
+              <label>Denumire</label>
+              <input type="text" class="form-control" formControlName="denumire">
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label>Valoare</label>
+            <input type="number" class="form-control" formControlName="valoare">
+          </div>
+
+          <div class="form-group">
+            <label>Tip cont</label>
+            <select class="form-control" id="sel1" formControlName="tipCont">
+              <option *ngFor="let tip of tipuriCont">{{tip}}</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="!contForm.valid">Salvare</button>
+          <button type="button" class="btn btn-warning" (click)="redirectConturiPage()">Anulare</button>
+          <pre>{{contForm.value | json}}</pre>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
